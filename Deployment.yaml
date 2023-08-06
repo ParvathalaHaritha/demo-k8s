@@ -52,7 +52,6 @@ metadata:
   name: java-app-ingress
   namespace: spring-petclinic
   annotations:
-    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/subnets: subnet-06cedccc6ad946ab5, subnet-0433a017495bd4e76, subnet-08922f32e7691e9d0
     alb.ingress.kubernetes.io/security-groups:
