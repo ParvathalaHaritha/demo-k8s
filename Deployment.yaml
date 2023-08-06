@@ -44,30 +44,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-  type: ClusterIP
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: java-app-ingress
-  namespace: spring-petclinic
-  annotations:
-    
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/target-type: instance
-    alb.ingress.kubernetes.io/subnets: subnet-06cedccc6ad946ab5, subnet-0433a017495bd4e76, subnet-08922f32e7691e9d0
-    alb.ingress.kubernetes.io/security-groups: sg-0d53813a0f6c2c3e2
-    alb.ingress.kubernetes.io/scheme: internet-facing
-
-
-spec:
-  rules:
-    - http:
-        paths:
-          - path: /*
-            pathType: Prefix
-            backend:
-              service:
-                name: java-app-service
-                port:
-                  number: 80
+  type: LoadBalancer
