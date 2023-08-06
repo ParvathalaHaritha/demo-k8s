@@ -16,7 +16,7 @@ spec:
   selector:
     matchLabels:
         app: spring-petclinic-app
-  replicas: 3
+  replicas: 1
   strategy:
     type: RollingUpdate
   template:
