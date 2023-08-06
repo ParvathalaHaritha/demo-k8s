@@ -26,7 +26,4 @@ jobs:
         aws-region: ap-south-1
 
     - name: Update kube config
-      env: 
-        aws-region: ap-south-1
-        cluster_name: eks-demo
-      run: aws eks --region $aws-region update-kubeconfig --name $cluster_name
+      run: aws eks --region ap-south-1 update-kubeconfig --name eks-demo
