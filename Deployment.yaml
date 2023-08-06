@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: spring-petclinic
+  name: aws-namespace
 
 ---
 apiVersion: apps/v1
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: spring-petclinic-app
-          image: 390585564163.dkr.ecr.ap-south-1.amazonaws.com/spring-petclinic:latest
+          image: 720766170633.dkr.ecr.us-east-2.amazonaws.com/octopus-underwater-app:latest
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -54,7 +54,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/subnets: 
+    alb.ingress.kubernetes.io/subnets: subnet-06cedccc6ad946ab5, subnet-0433a017495bd4e76, subnet-08922f32e7691e9d0
     alb.ingress.kubernetes.io/security-groups:
     alb.ingress.kubernetes.io/scheme: internet-facing
 
